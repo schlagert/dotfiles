@@ -1,0 +1,15 @@
+# skip everything, if not running interactively
+[[ $- != *i* ]] && return
+
+# source global definitions
+[[ -f /etc/bashrc ]] && . /etc/bashrc
+
+# add local bin directory to path
+[[ -d ~/bin ]] && export PATH=~/bin:"${PATH}"
+
+# include specific definitions
+. ./aliases
+. ./git
+. ./erlang
+. ./java
+. ./pkgconfig

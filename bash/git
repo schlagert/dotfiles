@@ -1,0 +1,26 @@
+# wonderful git prompt
+
+RED="\[\033[0;31m\]"
+GREEN="\[\033[0;32m\]"
+NO_COLOR="\[\033[0m\]"
+
+# prints the git branch name
+function git_branch_name {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+# compses a pretty git prompt
+function git_prompt {
+  if [[ $(git status 2> /dev/null) ]]; then
+    if [[ ! $(git status 2> /dev/null | tail -n1) =~ "working directory clean" ]]; then
+      PS1="[\u@\h \W ${RED}("`git_branch_name`"*)${NO_COLOR}]\$ "
+    else
+      PS1="[\u@\h \W ${GREEN}("`git_branch_name`")${NO_COLOR}]\$ "
+    fi
+  else
+    PS1="[\u@\h \W]\$ "
+  fi
+}
+
+# set custom prompt command
+export PROMPT_COMMAND=git_prompt

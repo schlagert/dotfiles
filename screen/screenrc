@@ -1,0 +1,1 @@
+hardstatus alwayslastline "[%c:%s|%D %d.%m.%Y|%H|%l] %{= ck}%-Lw %{= bW}%50>%n%f*%t %{= ck}%+Lw%<"

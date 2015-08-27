@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -ex
+
+BASE=$(cd ${0%/*} && pwd)
+
+# write .bashrc
+(
+cat <<EOF
+# .bashrc
+
+# source dotfiles
+pushd ${BASE} > /dev/null
+. ./main
+popd > /dev/null
+
+EOF
+) > ~/.bashrc
+
+# write .bash_profile
+(
+cat <<'EOF'
+# .bash_profile
+
+# just include .bashrc if existing
+[[ -n "${BASH_VERSION}" ]] && [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+EOF
+) > ~/.bash_profile
+
+exit 0

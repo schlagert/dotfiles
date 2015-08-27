@@ -1,0 +1,30 @@
+[user]
+        name = Tobias Schlager
+        email = tobias.schlager@lindenbaum.eu
+
+[gui]
+        editor = emacs
+
+[diff]
+        tool = meld
+
+[merge]
+        tool = meld
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = emacs -nw
+
+[alias]
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[color]
+        diff = always
+        status = always
+        showbranch = always
+
+[push]
+        default = simple
+
+[status]
+        displayCommentPrefix = true
