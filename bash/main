@@ -1,6 +1,3 @@
-# skip everything, if not running interactively
-[[ $- != *i* ]] && return
-
 # source global definitions
 [[ -f /etc/bashrc ]] && . /etc/bashrc
 
@@ -11,5 +8,4 @@
 . ./aliases
 . ./git
 . ./erlang
-. ./java
 . ./pkgconfig
