@@ -2,7 +2,8 @@
 [[ -f /etc/bashrc ]] && . /etc/bashrc
 
 # add local bin directory to path
-[[ -d ~/bin ]] && export PATH=~/bin:"${PATH}"
+[[ -d ~/bin ]] && export PATH="~/bin:${PATH}"
+[[ -d ~/.local/bin ]] && export PATH="~/.local/bin:${PATH}"
 
 # include specific definitions
 . ./aliases
