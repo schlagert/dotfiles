@@ -1,12 +1,15 @@
+#!/bin/bash
+
 # source global definitions
 [[ -f /etc/bashrc ]] && . /etc/bashrc
 
 # add local bin directory to path
-[[ -d ~/bin ]] && export PATH="~/bin:${PATH}"
-[[ -d ~/.local/bin ]] && export PATH="~/.local/bin:${PATH}"
+[[ -d ~/bin ]] && export PATH="~/bin:$PATH"
+[[ -d ~/.local/bin ]] && export PATH="~/.local/bin:$PATH"
 
 # include specific definitions
-. ./aliases
-. ./git
-. ./erlang
-. ./pkgconfig
+source ./aliases
+source ./b9
+source ./erlang
+source ./git
+source ./pkgconfig

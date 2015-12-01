@@ -3,7 +3,7 @@
 ERL_HOME="$HOME/local/otp-17.4"
 
 export ERL_TOP="$ERL_HOME/lib/erlang"
-export ERLINTERFACE_ROOT=$(find "$ERL_TOP/lib/" -name erl_interface-* -type d | tail -1)
-export ERL_TOOLS=$(find "$ERL_TOP/lib/" -name tools-* -type d | tail -1)
-export ERL_EUNIT=$(find "$ERL_TOP/lib/" -name eunit-* -type d | tail -1)
+export ERLINTERFACE_ROOT=$(find $ERL_TOP/lib/ -name erl_interface-* -type d | tail -1)
+export ERL_TOOLS=$(find $ERL_TOP/lib/ -name tools-* -type d | tail -1)
+export ERL_EUNIT=$(find $ERL_TOP/lib/ -name eunit-* -type d | tail -1)
 export PATH="$ERL_TOP/bin:$PATH"

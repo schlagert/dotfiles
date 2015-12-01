@@ -1,0 +1,7 @@
+#!/bin/bash
+
+B9C=$(find ~/.stack/ -name b9c | tail -1)
+if [ -f "$B9C" ]; then
+  B9_PATH=$(dirname $B9C)
+  export PATH="$B9_PATH:$PATH"
+fi
