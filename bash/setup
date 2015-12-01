@@ -10,7 +10,7 @@ cat <<EOF
 # .bashrc
 
 # source dotfiles
-pushd ${BASE} > /dev/null
+pushd $BASE > /dev/null
 . ./main
 popd > /dev/null
 

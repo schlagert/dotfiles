@@ -4,6 +4,6 @@ set -ex
 
 BASE=$(cd ${0%/*} && pwd)
 
-cp ${BASE}/screenrc ~/.screenrc
+cp $BASE/screenrc ~/.screenrc
 
 exit 0

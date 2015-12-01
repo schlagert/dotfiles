@@ -4,6 +4,6 @@ set -ex
 
 BASE=$(cd ${0%/*} && pwd)
 
-cp ${BASE}/q3config.cfg ~/.q3a/q3ut4/
+cp $BASE/q3config.cfg ~/.q3a/q3ut4/
 
 exit 0

@@ -1,2 +1,4 @@
-export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/lib/pkgconfig"
-export LDFLAGS="-L/usr/lib ${LDFLAGS}"
+#!/bin/bash
+
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/pkgconfig"
+export LDFLAGS="-L/usr/lib $LDFLAGS"
