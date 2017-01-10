@@ -1,0 +1,53 @@
+#!/bin/bash
+
+set -e
+
+BASE=$(cd ${0%/*} && pwd)
+
+echo ""
+echo "PACKAGES"
+echo "========"
+echo ""
+
+sudo dnf install $(cat $BASE/packages)
+
+echo ""
+echo "SOURCE PACKAGES"
+echo "==============="
+echo ""
+
+pushd $HOME
+mkdir -p .local
+pushd .local
+
+if [ ! -e "distel" ]; then
+    git clone https://github.com/massemanet/distel.git
+fi
+pushd distel
+make
+popd # distel
+
+if [ ! -e "emacs-nav" ]; then
+    git clone https://github.com/ancane/emacs-nav.git
+fi
+
+popd # .local
+popd # $HOME
+
+echo ""
+echo "CONFIGURATION"
+echo "============="
+echo ""
+
+pushd $BASE
+rm -f $HOME/.bashrc $HOME/.bash_profile
+stow -S -v -t $HOME bash
+stow -S -v -t $HOME emacs
+stow -S -v -t $HOME git
+stow -S -v -t $HOME screen
+stow -S -v -t $HOME ut4
+popd # $BASE
+
+echo ""
+echo "DONE!"
+echo ""

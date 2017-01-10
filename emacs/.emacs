@@ -1,12 +1,3 @@
-#!/bin/bash
-
-set -ex
-
-BASE=$(cd ${0%/*} && pwd)
-
-# write .emacs
-(
-cat <<EOF
 ;; packages
 (require 'package)
 (add-to-list 'package-archives
@@ -24,9 +15,22 @@ cat <<EOF
 (package-install 'haskell-mode)
 (package-install 'fill-column-indicator)
 
-;; dotfiles
-(setq load-path (cons "$BASE" load-path))
-(load "df_main.el")
+;; load extensions
+(setq load-path (cons "~/.emacs.d/lisp/" load-path))
+
+;; erlang major mode and enhancements
+(load "df_erlang.el")
+(load "df_distel.el")
+;;(load "df_edts.el")
+
+;; basic haskell-mode
+(load "df_haskell.el")
+
+;; fill-column-indicator
+(load "df_fci.el")
+
+;; emacs-nav
+(load "df_nav.el")
 
 ;; custom settings
 (custom-set-variables
@@ -41,8 +45,3 @@ cat <<EOF
 (put 'downcase-region 'disabled nil)
 (add-hook 'before-save-hook (function delete-trailing-whitespace))
 (custom-set-faces)
-
-EOF
-) > ~/.emacs
-
-exit 0

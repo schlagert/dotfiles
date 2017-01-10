@@ -1,6 +1,0 @@
-#!/bin/bash
-
-B9C=$(find ~/.stack/ -name b9c | tail -1)
-if [ -f "$B9C" ]; then
-  extendPATH $(dirname $B9C)
-fi
