@@ -22,9 +22,9 @@ alias ema='emacs -nw'
 alias vi='vim'
 
 # ERLANG
-ERL_HOME="$HOME/local/otp-17.4"
+ERL_HOME="$HOME/local/otp-18.3"
 
-if [ -d "ERL_HOME" ]; then
+if [ -d "$ERL_HOME" ]; then
     export ERL_TOP="$ERL_HOME/lib/erlang"
     extendPATH $ERL_TOP/bin
 else
