@@ -31,14 +31,9 @@ else
     export ERL_TOP="/usr/lib64/erlang"
 fi
 
-export ERLINTERFACE_ROOT=$(find $ERL_TOP/lib/ -name erl_interface-* -type d | tail -1)
-export ERL_TOOLS=$(find $ERL_TOP/lib/ -name tools-* -type d | tail -1)
-export ERL_EUNIT=$(find $ERL_TOP/lib/ -name eunit-* -type d | tail -1)
-
 # PKGCONFIG
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/pkgconfig"
 export LDFLAGS="-L/usr/lib $LDFLAGS"
 
 # GIT
 source $HOME/.gitprompt
-
