@@ -45,3 +45,4 @@
 (put 'downcase-region 'disabled nil)
 (add-hook 'before-save-hook (function delete-trailing-whitespace))
 (custom-set-faces)
+(load-theme 'adwaita)
