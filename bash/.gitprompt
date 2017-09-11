@@ -14,7 +14,7 @@ function git_branch_name {
 # compses a pretty git prompt
 function git_prompt {
   if [[ $(git status 2> /dev/null) ]]; then
-    if [[ ! $(git status 2> /dev/null | tail -n1) =~ "working directory clean" ]]; then
+    if [[ ! $(git status 2> /dev/null | tail -n1) =~ "working tree clean" ]]; then
       PS1="[\u@\h \W ${RED}("`git_branch_name`"*)${NO_COLOR}]\$ "
     else
       PS1="[\u@\h \W ${GREEN}("`git_branch_name`")${NO_COLOR}]\$ "
