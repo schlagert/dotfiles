@@ -20,9 +20,10 @@ alias la='ls -a'
 alias l='ls -lahrt'
 alias ema='emacs -nw'
 alias vi='vim'
+alias rm='rm -I'
 
 # ERLANG
-ERL_HOME="$HOME/local/otp-18.3"
+ERL_HOME="$HOME/local/otp-20.1"
 
 if [ -d "$ERL_HOME" ]; then
     export ERL_TOP="$ERL_HOME/lib/erlang"
