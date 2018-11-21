@@ -5,6 +5,11 @@
 (setq exec-path (cons (concat erl-top "/bin") exec-path))
 (require 'erlang-start)
 
+(defun erlang-align-case-clauses (start end)
+  "Align the arrows of all case clauses in a region."
+  (interactive "r")
+  (align-regexp start end "\\(\\s-*\\)->"))
+
 (add-hook 'erlang-mode-hook
 	  (lambda ()
             ;; when starting an Erlang shell in Emacs, the node name
@@ -12,5 +17,5 @@
             (setq inferior-erlang-machine-options '("-sname" "emacs"))
 	    ;; add Erlang functions to an imenu menu
 	    (imenu-add-to-menubar "imenu")
-            ;; open erlang manual page for underlying function
-            (local-set-key [f1] 'erlang-man-function)))
+            ;; align selected region to ->
+            (local-set-key [?\C-c ?\C-f] 'erlang-align-case-clauses)))
