@@ -1,9 +1,11 @@
 binutils
 clusterssh
+coreutils
 curl
 dconf-editor
 emacs
 erlang
+findutils
 gcc
 gcc-c++
 gconf-editor
@@ -12,6 +14,8 @@ git-cola
 lame
 meld
 openssh-server
+ripgrep
 screen
 stow
+the_silver_searcher
 wget
