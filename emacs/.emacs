@@ -8,17 +8,24 @@
 
 ;; comment the following lines after first launch
 (package-refresh-contents)
+(package-install 'company)
 (package-install 'erlang)
+(package-install 'company-erlang)
 (package-install 'edts)
 (package-install 'haskell-mode)
 (package-install 'fill-column-indicator)
+(package-install 'popup-complete)
+
+;; enable company mode on all buffers
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; load extensions
 (setq load-path (cons "~/.emacs.d/lisp/" load-path))
 
 ;; erlang major mode and enhancements
 (load "df_erlang.el")
-(load "df_distel.el")
+(load "df_erlang_ivy.el")
+;;(load "df_distel.el")
 ;;(load "df_edts.el")
 
 ;; basic haskell-mode

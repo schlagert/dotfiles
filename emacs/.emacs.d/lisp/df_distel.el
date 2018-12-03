@@ -11,3 +11,14 @@
        (concat
         "emacs@"
         (car (split-string (shell-command-to-string "hostname"))))))
+
+(setq load-path (cons (concat home "/.local/distel-completion") load-path))
+(require 'company-distel)
+
+(setq company-distel-popup-help t)
+(setq company-distel-popup-height 30)
+(setq distel-completion-get-doc-from-internet t)
+
+(add-hook 'erlang-mode-hook
+          (lambda ()
+            (setq company-backends '(company-distel))))

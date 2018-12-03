@@ -24,11 +24,24 @@ if [ ! -e "distel" ]; then
     git clone https://github.com/massemanet/distel.git
 fi
 pushd distel
+git pull
 make
 popd # distel
 
+if [ ! -e "distel-completion" ]; then
+    git clone https://github.com/sebastiw/distel-completion.git
+else
+pushd distel-completion
+git pull
+popd # distel-completion
+fi
+
 if [ ! -e "emacs-nav" ]; then
     git clone https://github.com/ancane/emacs-nav.git
+else
+pushd emacs-nav
+git pull
+popd # emacs-nav
 fi
 
 popd # .local
