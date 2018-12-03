@@ -12,9 +12,6 @@
 
 (add-hook 'erlang-mode-hook
 	  (lambda ()
-            ;; when starting an Erlang shell in Emacs, the node name
-            ;; by default should be "emacs"
-            (setq inferior-erlang-machine-options '("-sname" "emacs"))
 	    ;; add Erlang functions to an imenu menu
 	    (imenu-add-to-menubar "imenu")
             ;; align selected region to ->
