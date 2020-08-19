@@ -5,11 +5,20 @@ set -e
 BASE=$(cd ${0%/*} && pwd)
 
 echo ""
+echo "REPOSITORIES"
+echo "============"
+echo ""
+
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+                 https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+echo ""
 echo "PACKAGES"
 echo "========"
 echo ""
 
 sudo dnf install $(cat $BASE/packages)
+curl -sSL https://get.haskellstack.org/ | sh
 
 echo ""
 echo "SOURCE PACKAGES"
@@ -42,6 +51,15 @@ else
 pushd emacs-nav
 git pull
 popd # emacs-nav
+fi
+
+if [ ! -e "b9-vm-image-builder" ]; then
+    git clone https://github.com/sheyll/b9-vm-image-builder.git
+else
+pushd b9-vm-image-builder
+git pull
+stack install
+popd # b9-vm-image-builder
 fi
 
 popd # .local
