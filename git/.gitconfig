@@ -28,5 +28,9 @@
 
 [status]
         displayCommentPrefix = true
+
 [cola]
 	spellcheck = false
+
+[pull]
+	rebase = true

@@ -14,6 +14,9 @@ function extendPATH {
 [[ -d $HOME/bin ]] && extendPATH $HOME/bin
 [[ -d $HOME/.local/bin ]] && extendPATH $HOME/.local/bin
 
+# nix
+[[ -e ~/.nix-profile/etc/profile.d/nix.sh ]] && . ~/.nix-profile/etc/profile.d/nix.sh
+
 # aliases
 alias ll='ls -l'
 alias la='ls -a'

@@ -18,7 +18,7 @@ echo "========"
 echo ""
 
 sudo dnf install $(cat $BASE/packages)
-curl -sSL https://get.haskellstack.org/ | sh
+curl -L https://nixos.org/nix/install | sh
 
 echo ""
 echo "SOURCE PACKAGES"
@@ -51,15 +51,6 @@ else
 pushd emacs-nav
 git pull
 popd # emacs-nav
-fi
-
-if [ ! -e "b9-vm-image-builder" ]; then
-    git clone https://github.com/sheyll/b9-vm-image-builder.git
-else
-pushd b9-vm-image-builder
-git pull
-stack install
-popd # b9-vm-image-builder
 fi
 
 popd # .local
