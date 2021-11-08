@@ -26,10 +26,9 @@ alias vi='vim'
 alias rm='rm -I'
 
 # ERLANG
-ERL_HOME="$HOME/local/otp-20.1"
+export ERL_TOP="$HOME/.local/otp-23.3/lib/erlang"
 
-if [ -d "$ERL_HOME" ]; then
-    export ERL_TOP="$ERL_HOME/lib/erlang"
+if [ -d "$ERL_TOP" ]; then
     extendPATH $ERL_TOP/bin
 else
     export ERL_TOP="/usr/lib64/erlang"

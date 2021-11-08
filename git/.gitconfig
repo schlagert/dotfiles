@@ -34,3 +34,6 @@
 
 [pull]
 	rebase = true
+
+[includeIf "gitdir:~/workspace/vier/"]
+	path = ~/.gitconfig-vier

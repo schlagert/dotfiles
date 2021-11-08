@@ -4,6 +4,7 @@ autoconf
 binutils
 clusterssh
 cmake3
+compat-openssl10
 coreutils
 curl
 dconf
